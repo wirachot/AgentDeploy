@@ -25,7 +25,8 @@ Resource ID / Domain: $ARGUMENTS
 ### Step 2: Stream & Capture Logs
 1. Fetch and print the real-time build logs to show progress (compiling, installing dependencies, copying files).
 2. If the build succeeds, monitor the container runtime logs (database connections, startup messages, listen port binding).
-3. If an error is detected in build/runtime logs, exit with code 1, outputting the error snippet clearly.
+3. Save all streamed build and startup logs to `.adlc/logs/deploy-latest.log` (overwriting the previous log) and `.adlc/logs/deploy-[timestamp].log` (where `timestamp` is the execution time, e.g., `20260520-171500`, for audit history).
+4. If an error is detected in build/runtime logs, ensure the failure details are written to the logs, and exit with code 1, outputting the error snippet clearly.
 
 ### Step 3: Health Check
 1. Once logs show successful binding:

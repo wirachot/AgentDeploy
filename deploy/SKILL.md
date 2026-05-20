@@ -65,14 +65,15 @@ Execute the following phases in sequence. Each phase delegates work to its corre
 1. Initiate the build/deployment on the target platform.
 2. Stream build logs in real-time.
 3. Monitor container startup logs to ensure port binding succeeds.
-4. If deployment succeeds (health check HTTP 200 OK), skip to Phase 6.
-5. If deployment fails (build crash, Nginx 502, timeout), capture the logs and proceed to Phase 5.
+4. Save the full build/startup output to `.adlc/logs/deploy-latest.log` (overwrites existing) and `.adlc/logs/deploy-[timestamp].log` (for history).
+5. If deployment succeeds (health check HTTP 200 OK), skip to Phase 6.
+6. If deployment fails (build crash, Nginx 502, timeout), ensure logs are fully captured in `.adlc/logs/deploy-latest.log` and proceed to Phase 5.
 
 ---
 
 ### Phase 5: Self-Healing & Redeployment Loop
-**Action:** Invoke `/deploy-heal` with the captured error logs/failure reasons.
-1. Let the healing agent diagnose the failure cause (missing dependency, wrong port, DB connection error).
+**Action:** Invoke `/deploy-heal` with the path to the error log file `.adlc/logs/deploy-latest.log`.
+1. Let the healing agent diagnose the failure cause (missing dependency, wrong port, DB connection error) by reading the deploy log.
 2. Auto-edit files in the codebase (code or config) to resolve the error.
 3. Commit the changes and push to the remote repository.
 4. **Redeploy Loop:** Return to Phase 4 to re-trigger build and monitor.

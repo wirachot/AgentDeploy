@@ -14,12 +14,12 @@ You are executing the `/deploy-heal` skill. Your task is to act as a self-healin
 
 ## Input
 
-Error Logs/Failure Reason: $ARGUMENTS
+Error Logs/Failure Reason: $ARGUMENTS (Can be raw logs, error summary, or a path to a log file such as `.adlc/logs/deploy-latest.log`. If no argument is provided, default to reading `.adlc/logs/deploy-latest.log`).
 
 ## Instructions
 
 ### Step 1: Parse logs & Diagnose
-1. Inspect the provided build or runtime logs.
+1. Inspect the provided build or runtime logs. If a path to a log file is given (or if no argument was passed and `.adlc/logs/deploy-latest.log` exists), read the file's content directly to obtain the logs.
 2. Formulate a diagnostic assessment identifying:
    - **Error Category:** (e.g. Missing Dependency, Port Conflict, Database Connection Failure, Missing Environment Variable, Syntactic Bug).
    - **Target File & Line:** Where the error occurred.

@@ -10,3 +10,6 @@
 
 # ADLC pipeline state (ephemeral, per-worktree)
 .adlc/specs/*/pipeline-state.json
+
+# ADLC deployment logs
+.adlc/logs/
