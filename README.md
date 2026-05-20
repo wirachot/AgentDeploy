@@ -58,13 +58,78 @@ AgentDeploy/
 
 ## การตั้งค่าปุ่มลัด Global (Global Setup & Short Commands)
 
-เพื่อให้สามารถพิมพ์คำสั่งลัดเช่น `/deploy` หรือ `/deploy-heal` ใน IDE แล้วเครื่องมือเรียกใช้ตัวแปรชุดนี้โดยอัตโนมัติ ให้ทำการตั้งค่าที่ไฟล์ global config ของ Antigravity:
+เพื่อให้สามารถพิมพ์คำสั่งลัดเช่น `/deploy` หรือ `/deploy-heal` ใน IDE/AI Agent ของคุณ แล้วเครื่องมือพัฒนาเรียกใช้งานคำสั่งตามขั้นตอนของชุดเครื่องมือนี้โดยอัตโนมัติ ให้ทำการตั้งค่าตามคำแนะนำของเครื่องมือแต่ละค่ายดังนี้:
 
-1. เปิดหรือสร้างไฟล์ที่ **`~/.gemini/GEMINI.md`** (หรือระบุในโฟลเดอร์โปรเจกต์ที่ **`.agent/rules/`**)
-2. ใส่การตั้งค่าดังนี้ (เส้นทางระบุไปยังไดเรกทอรีนี้ `/Users/ben/Desktop/Work/AgentDeploy`):
-
+### 🌌 1. Antigravity (Google Gemini Agent)
+* **ตำแหน่งไฟล์**: `~/.gemini/GEMINI.md` หรือระบุในโฟลเดอร์โปรเจกต์ที่ `.agent/rules/`
+* **ตั้งค่าดังนี้** (เส้นทางระบุไปยังไดเรกทอรีนี้ `/Users/ben/Desktop/Work/AgentDeploy`):
 ```markdown
 When the user inputs a short command, always execute the `view_file` tool in the background with `IsSkillFile: true` pointing to the corresponding Skill file before starting work:
+- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+```
+
+### 🚀 2. Cursor
+* **ตำแหน่งไฟล์**: สร้างไฟล์ `.cursorrules` ไว้ที่ Root ของโปรเจกต์
+* **ตั้งค่าดังนี้**:
+```markdown
+When the user inputs a short command, always read the corresponding Skill file immediately before taking action or responding:
+- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+```
+
+### 🏄 3. Windsurf
+* **ตำแหน่งไฟล์**: สร้างไฟล์ `.windsurfrules` ไว้ที่ Root ของโปรเจกต์
+* **ตั้งค่าดังนี้**:
+```markdown
+When the user inputs a short command or references these deployment processes, read the corresponding Skill file immediately before proceeding:
+- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+```
+
+### 🛠️ 4. Roo Code / Cline (VS Code Extension)
+* **ตำแหน่งไฟล์**: สร้างไฟล์ `.clinerules` ไว้ที่ Root ของโปรเจกต์
+* **ตั้งค่าดังนี้**:
+```markdown
+When the user inputs a short command, read the corresponding Skill file before starting work:
+- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+```
+
+### 🐙 5. GitHub Copilot
+* **ตำแหน่งไฟล์**: สร้างไฟล์ `.github/copilot-instructions.md` ไว้ที่ Root ของโปรเจกต์
+* **ตั้งค่าดังนี้**:
+```markdown
+When the user references these custom slash commands, read the content of the referenced file to understand the skill context:
+- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+```
+
+### 💎 6. JetBrains AI Assistant (IntelliJ, WebStorm, PyCharm, etc.)
+* **ตำแหน่งไฟล์**: ระบุคู่มือใน **System Prompt** / **Prompt Library** หรือสร้างไฟล์ `.github/copilot-instructions.md` ที่ Root ของโปรเจกต์
+* **ตั้งค่าดังนี้**:
+```markdown
+When the user inputs a short command, refer to the corresponding Skill file:
 - `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
 - `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
 - `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
