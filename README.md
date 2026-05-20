@@ -1,6 +1,6 @@
-# Antigravity ADLC Deploy Pipeline
+# ADLC Auto-Deploy Pipeline
 
-A **DevOps & Auto-Deployment Pipeline** toolset extracted specifically from the Antigravity ADLC Toolkit for automated codebase analysis, provisioning, deployment, and self-healing system recovery on cloud providers or VPS environments.
+A **DevOps & Auto-Deployment Pipeline** toolset for automated codebase analysis, provisioning, deployment, and self-healing system recovery on cloud providers or VPS environments.
 
 ---
 
@@ -60,7 +60,7 @@ AgentDeploy/
 
 To execute short commands such as `/deploy` or `/deploy-heal` in your IDE/AI Agent and have the development tools automatically load this toolset's sequence, follow the configuration instructions for your preferred AI tool below:
 
-### 🌌 1. Antigravity (Google Gemini Agent)
+### 🌌 1. Google Gemini / Custom Agent Rules
 * **File Location**: `~/.gemini/GEMINI.md` or locally in `.agent/rules/` within your project folder.
 * **Configuration** (Paths mapped to this directory `/Users/ben/Desktop/Work/AgentDeploy`):
 ```markdown
