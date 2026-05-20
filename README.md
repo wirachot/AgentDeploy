@@ -62,15 +62,15 @@ To execute short commands such as `/deploy` or `/deploy-heal` in your IDE/AI Age
 
 ### 🌌 1. Google Gemini / Custom Agent Rules
 * **File Location**: `~/.gemini/GEMINI.md` or locally in `.agent/rules/` within your project folder.
-* **Configuration** (Paths mapped to this directory `/Users/ben/Desktop/Work/AgentDeploy`):
+* **Configuration** (Paths mapped to this directory `/path/to/AgentDeploy`):
 ```markdown
 When the user inputs a short command, always execute the `view_file` tool in the background with `IsSkillFile: true` pointing to the corresponding Skill file before starting work:
-- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
-- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
-- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
-- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
-- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
-- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+- `/deploy` -> Read the file `/path/to/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/path/to/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/path/to/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/path/to/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/path/to/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/path/to/AgentDeploy/deploy-heal/SKILL.md`
 ```
 
 ### 🚀 2. Cursor
@@ -78,12 +78,12 @@ When the user inputs a short command, always execute the `view_file` tool in the
 * **Configuration**:
 ```markdown
 When the user inputs a short command, always read the corresponding Skill file immediately before taking action or responding:
-- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
-- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
-- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
-- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
-- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
-- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+- `/deploy` -> Read the file `/path/to/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/path/to/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/path/to/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/path/to/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/path/to/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/path/to/AgentDeploy/deploy-heal/SKILL.md`
 ```
 
 ### 🏄 3. Windsurf
@@ -91,12 +91,12 @@ When the user inputs a short command, always read the corresponding Skill file i
 * **Configuration**:
 ```markdown
 When the user inputs a short command or references these deployment processes, read the corresponding Skill file immediately before proceeding:
-- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
-- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
-- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
-- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
-- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
-- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+- `/deploy` -> Read the file `/path/to/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/path/to/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/path/to/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/path/to/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/path/to/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/path/to/AgentDeploy/deploy-heal/SKILL.md`
 ```
 
 ### 🛠️ 4. Roo Code / Cline (VS Code Extension)
@@ -104,12 +104,12 @@ When the user inputs a short command or references these deployment processes, r
 * **Configuration**:
 ```markdown
 When the user inputs a short command, read the corresponding Skill file before starting work:
-- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
-- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
-- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
-- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
-- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
-- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+- `/deploy` -> Read the file `/path/to/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/path/to/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/path/to/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/path/to/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/path/to/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/path/to/AgentDeploy/deploy-heal/SKILL.md`
 ```
 
 ### 🐙 5. GitHub Copilot
@@ -117,12 +117,12 @@ When the user inputs a short command, read the corresponding Skill file before s
 * **Configuration**:
 ```markdown
 When the user references these custom slash commands, read the content of the referenced file to understand the skill context:
-- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
-- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
-- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
-- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
-- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
-- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+- `/deploy` -> Read the file `/path/to/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/path/to/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/path/to/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/path/to/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/path/to/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/path/to/AgentDeploy/deploy-heal/SKILL.md`
 ```
 
 ### 💎 6. JetBrains AI Assistant (IntelliJ, WebStorm, PyCharm, etc.)
@@ -130,12 +130,12 @@ When the user references these custom slash commands, read the content of the re
 * **Configuration**:
 ```markdown
 When the user inputs a short command, refer to the corresponding Skill file:
-- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
-- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
-- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
-- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
-- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
-- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+- `/deploy` -> Read the file `/path/to/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/path/to/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/path/to/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/path/to/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/path/to/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/path/to/AgentDeploy/deploy-heal/SKILL.md`
 ```
 
 ### 🤖 7. Claude Code
@@ -143,12 +143,12 @@ When the user inputs a short command, refer to the corresponding Skill file:
 * **Configuration**:
 ```markdown
 When the user inputs a short command, always read the corresponding Skill file immediately before taking action or responding:
-- `/deploy` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy/SKILL.md`
-- `/deploy-analyze` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-analyze/SKILL.md`
-- `/deploy-env` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-env/SKILL.md`
-- `/deploy-provision` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-provision/SKILL.md`
-- `/deploy-trigger` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-trigger/SKILL.md`
-- `/deploy-heal` -> Read the file `/Users/ben/Desktop/Work/AgentDeploy/deploy-heal/SKILL.md`
+- `/deploy` -> Read the file `/path/to/AgentDeploy/deploy/SKILL.md`
+- `/deploy-analyze` -> Read the file `/path/to/AgentDeploy/deploy-analyze/SKILL.md`
+- `/deploy-env` -> Read the file `/path/to/AgentDeploy/deploy-env/SKILL.md`
+- `/deploy-provision` -> Read the file `/path/to/AgentDeploy/deploy-provision/SKILL.md`
+- `/deploy-trigger` -> Read the file `/path/to/AgentDeploy/deploy-trigger/SKILL.md`
+- `/deploy-heal` -> Read the file `/path/to/AgentDeploy/deploy-heal/SKILL.md`
 ```
 
 ---
@@ -186,4 +186,4 @@ Coordinates the execution of all sub-skills, starting from credential checks to 
 
 ## Core Ethos
 
-For developer guidelines and standard operating procedures, please refer to [ETHOS.md](file:///Users/ben/Desktop/Work/AgentDeploy/ETHOS.md).
+For developer guidelines and standard operating procedures, please refer to [ETHOS.md](ETHOS.md).
