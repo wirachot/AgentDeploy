@@ -29,8 +29,11 @@ Execute the following phases in sequence. Each phase delegates work to its corre
 
 ### Phase 0: Preflight & Resolve Target
 1. Resolve target provider details and credentials from `$ARGUMENTS` and `.adlc/config.yml`.
-2. Verify API tokens are present (e.g., `COOLIFY_API_KEY` for Coolify API, or SSH credentials for VPS).
-3. Log status: "Preflight verified. Initializing deployment pipeline."
+2. If multiple deployment targets/profiles are configured under `.adlc/config.yml`, or if running interactively, present the target options to the user along with an option to "Create a New Deployment Destination".
+   - If an existing target is chosen, load its parameters.
+   - If "Create a New Deployment Destination" is chosen, prompt the user for the new destination details, dynamically provision the new environment/database in Phase 3, and save/register the new profile under `.adlc/config.yml`.
+3. Verify API tokens are present (e.g., `COOLIFY_API_KEY` for Coolify API, or SSH credentials for VPS).
+4. Log status: "Preflight verified. Initializing deployment pipeline."
 
 ---
 
