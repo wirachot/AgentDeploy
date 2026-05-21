@@ -16,8 +16,7 @@ prints it. Skills invoke it like:
 !`sh .adlc/partials/<name>.sh 2>/dev/null || sh ~/.claude/skills/partials/<name>.sh`
 ```
 
-The consumer-project-first fallback works whether or not `/init` has been run
-in the consumer repo.
+The consumer-project-first fallback works whether or not a copy of the partial is present in the consumer repository.
 
 ## Adding a new partial
 
